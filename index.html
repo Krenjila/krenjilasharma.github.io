@@ -1,8 +1,152 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Krenjila Sharma</title></head>
-  <body style="font-family:system-ui; max-width:740px; margin:40px auto; line-height:1.6;">
-    <h1>Hello, I’m Krenjila 👋</h1>
-    <p>Portfolio coming soon. This is powered by GitHub Pages.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Krenjila Sharma — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="logo" href="#top">KS</a>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#resume">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#aspirations">Aspirations</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <section class="hero" id="top">
+        <h1>Hi, I’m <span class="accent">Krenjila</span>.</h1>
+        <p class="tagline">
+          Junior at Caldwell University studying Computer Science and Business Analytics.
+          I build clear, useful products and back them with data.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn ghost" href="#resume">See Experience</a>
+        </div>
+        <div class="quick-facts">
+          <span>GPA 3.7+</span>
+          <span>Research Assistant & Lab Ops Manager</span>
+          <span>NY/NJ</span>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-sub">Case studies with problem, approach, and measurable results.</p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-tag">Product • Research</div>
+            <h3>Touch-Based IDE</h3>
+            <p>
+              Prototyped a gesture-first IDE for rapid coding on touch devices.
+              Built multi-file project structure, JSON export, and a clean editor UI.
+            </p>
+            <ul class="bullets">
+              <li>Outcome: two prototypes, reduced navigation steps per task</li>
+              <li>Stack: Figma, JS, JSON</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Analytics • UX</div>
+            <h3>Qualifacts IQ Survey & Dashboard</h3>
+            <p>
+              Designed survey 2.0 to measure DAP note and forms satisfaction.
+              Built dashboards tracking navigation confidence and time saved.
+            </p>
+            <ul class="bullets">
+              <li>Outcome: clearer signal on adoption and training gaps</li>
+              <li>Stack: Smartsheet, Excel/Power BI</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">Data • Strategy</div>
+            <h3>POS ROI Model (WoW Payments)</h3>
+            <p>
+              Modeled payback for POS deployments and supported pipeline reporting.
+              Focused on unit economics and risk scenarios for small retailers.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resume">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="t-item"><div class="t-dot"></div><div class="t-content">
+            <h3>Lab Operations Manager & Research Assistant • Caldwell</h3>
+            <p>Manage $50K+ assets, scheduling, and integrity dashboards. Support AI research and student projects.</p>
+          </div></div>
+
+          <div class="t-item"><div class="t-dot"></div><div class="t-content">
+            <h3>AI Project Analyst Intern • Pyramid Healthcare</h3>
+            <p>Survey design and workflow metrics for AI documentation tool. Built adoption and satisfaction views.</p>
+          </div></div>
+
+          <div class="t-item"><div class="t-dot"></div><div class="t-content">
+            <h3>Business Development Intern • WoW Payments</h3>
+            <p>POS ROI modeling, pipeline reports, and sales enablement materials for SMB retailers.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="chips">
+          <span>Figma</span><span>HTML/CSS/JS</span><span>Python</span><span>SQL</span>
+          <span>Power BI</span><span>Smartsheet</span><span>Research</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="aspirations">
+      <div class="container">
+        <h2>Aspirations</h2>
+        <ul class="highlights">
+          <li>Ship projects with real users and measurable impact.</li>
+          <li>Intern in Product Design or Analytics for Summer 2026 and convert to full time.</li>
+          <li>Build toward an APM or RPM program after graduation in 2027.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Open to internships, collabs, and feedback.</p>
+        <div class="contact-cards">
+          <a class="card mini" href="mailto:hello@krenjilasharma.com">hello@krenjilasharma.com</a>
+          <a class="card mini" href="https://linkedin.com/in/krenjilasharma" target="_blank">LinkedIn</a>
+          <a class="card mini" href="https://github.com/krenjilasharma" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Krenjila Sharma</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
