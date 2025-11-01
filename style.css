@@ -56,3 +56,13 @@ a{color:var(--accent);text-decoration:none}
   .hero h1{font-size:34px}
   .nav-links a{margin-left:12px}
 }
+/* Scroll-reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
