@@ -1,11 +1,12 @@
 :root{
-  --bg:#ffffff;          /* page background */
-  --panel:#f7f8fb;       /* header/footer panels */
-  --ink:#0f172a;         /* main text (slate-900) */
-  --muted:#6b7280;       /* muted text */
-  --accent:#2563eb;      /* blue accent */
-  --card:#ffffff;        /* card bg */
-  --line:#e5e7eb;        /* light borders */
+  --bg:#fffdf8;          /* warm cream background */
+  --panel:#fff8ee;       /* light panel tint */
+  --ink:#0f172a;         /* primary text */
+  --muted:#667085;       /* muted text */
+  --accent:#e85c4a;      /* coral accent */
+  --accent-ink:#ffffff;  /* text on accent */
+  --card:#ffffff;        /* card background */
+  --line:#ede9e3;        /* soft borders */
 }
 
 html,body{
@@ -211,3 +212,7 @@ h2 { font-size:32px; }
   border-bottom:1px solid var(--line);
   background:linear-gradient(180deg,#fcfdff,transparent);
 }
+.btn:hover{ filter:brightness(0.95); transform:translateY(-1px); }
+.btn{ transition:transform .15s ease, filter .15s ease; }
+a{ text-underline-offset:3px; }
+a:hover{ text-decoration:underline; }
