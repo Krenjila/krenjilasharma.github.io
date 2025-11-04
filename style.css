@@ -170,3 +170,14 @@ h2 { font-size:32px; }
 @media (min-width:900px){
   .container{ padding:0 56px; }  /* wider gutters on big screens */
 }
+/* Header balance */
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* pushes links away from logo */
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:24px; /* space between links */
+}
