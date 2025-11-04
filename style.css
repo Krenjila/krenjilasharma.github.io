@@ -216,3 +216,26 @@ h2 { font-size:32px; }
 .btn{ transition:transform .15s ease, filter .15s ease; }
 a{ text-underline-offset:3px; }
 a:hover{ text-decoration:underline; }
+/* Coral-themed hero glow */
+.hero::before{
+  background: radial-gradient(circle at 50% 40%,
+    rgba(232,92,74,0.25) 0%,
+    rgba(255,184,160,0.18) 25%,
+    rgba(255,255,255,0.0) 60%);
+}
+
+/* Softer button style on light coral theme */
+.btn{
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 4px 14px rgba(232,92,74,0.25);
+}
+.btn.ghost{
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.btn:hover{
+  box-shadow: 0 6px 20px rgba(232,92,74,0.35);
+  transform: translateY(-2px);
+}
