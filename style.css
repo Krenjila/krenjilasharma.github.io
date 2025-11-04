@@ -161,3 +161,12 @@ html,body{
 }
 .hero h1 { font-size:56px; line-height:1.05; }
 h2 { font-size:32px; }
+/* Layout container (centers content and adds side padding) */
+.container{
+  max-width:1120px;
+  margin:0 auto;        /* centers the block */
+  padding:0 28px;       /* side gutters */
+}
+@media (min-width:900px){
+  .container{ padding:0 56px; }  /* wider gutters on big screens */
+}
