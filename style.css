@@ -181,3 +181,33 @@ h2 { font-size:32px; }
   align-items:center;
   gap:24px; /* space between links */
 }
+/* Centered, expressive hero */
+.hero{
+  position: relative;
+  padding: 96px 0 72px;         /* more breathing room */
+  text-align: center;           /* center all hero text */
+}
+.hero .cta-row{ justify-content: center; }
+.hero .quick-facts{ justify-content: center; }
+
+/* Soft gradient blob behind hero */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-80px 0 auto 50%;
+  width:900px; height:480px;
+  transform: translateX(-50%);
+  background: radial-gradient( circle at 50% 40%,
+    rgba(37,99,235,0.20) 0%,
+    rgba(147,197,253,0.18) 25%,
+    rgba(255,255,255,0.0) 60% );
+  filter: blur(28px);
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* Slightly lighter header so hero glow stands out */
+.site-header{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fcfdff,transparent);
+}
