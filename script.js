@@ -1,11 +1,10 @@
-// Re-trigger reveal on enter, remove on exit
+// One-time reveal: show on first entry, never hide again
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
         e.target.classList.add("visible");
-      } else {
-        e.target.classList.remove("visible");
+        observer.unobserve(e.target); // stop watching once shown
       }
     });
   },
