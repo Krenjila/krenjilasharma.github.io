@@ -239,3 +239,23 @@ a:hover{ text-decoration:underline; }
   box-shadow: 0 6px 20px rgba(232,92,74,0.35);
   transform: translateY(-2px);
 }
+/* Alternating section backgrounds for flow */
+main .section:nth-of-type(odd){
+  background: var(--bg);
+}
+main .section:nth-of-type(even){
+  background: var(--panel);
+}
+
+/* Softer separation */
+.section{
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Round the content feel a bit on large screens */
+@media (min-width: 900px){
+  .section .container{
+    border-radius: 12px;
+  }
+}
