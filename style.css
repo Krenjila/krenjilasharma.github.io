@@ -297,3 +297,30 @@ main .section:nth-of-type(even){
   max-width: 980px;
   width: 100%;
 }
+/* Experience timeline spacing + alignment */
+.timeline{
+  border-left: 3px solid var(--line);
+  padding-left: 28px;        /* more space between line/dot and text */
+}
+.t-item{
+  position: relative;
+  margin: 20px 0 24px;
+}
+.t-dot{
+  position: absolute;
+  left: -10px;               /* dot sits neatly on the line */
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+.t-content h3{
+  margin: 0 0 6px;
+}
+.t-content p{
+  margin: 0;
+  color: var(--muted);
+}
