@@ -12,8 +12,9 @@ html,body{
   margin:0;padding:0;
   background:var(--bg);
   color:var(--ink);
-  font:17px/1.75 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;
+  font:17px/1.75 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
+
 
 /* header panel + nav tweaks */
 .site-header{
@@ -153,3 +154,10 @@ html,body{
 .reveal.visible .timeline .t-item:nth-child(8),
 .reveal.visible .chips span:nth-child(8),
 .reveal.visible .highlights li:nth-child(8) { transition-delay: .54s; }
+/* Personality via type */
+.hero h1, h1, h2, .logo-text {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.5px;
+}
+.hero h1 { font-size:56px; line-height:1.05; }
+h2 { font-size:32px; }
