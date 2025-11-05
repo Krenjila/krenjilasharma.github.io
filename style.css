@@ -1,20 +1,16 @@
-/* ===========================
-   KRENJILA PORTFOLIO — CLEAN CSS
-   Single source of truth (no duplicates)
-   =========================== */
+
 
 /* ---------- Theme ---------- */
 :root{
   --bg:#fffdf8;          /* warm cream */
-  --panel:#fff8ee;       /* light panel */
+  --panel:#fff8ee;       /* light tint */
   --ink:#0f172a;         /* main text */
   --muted:#667085;       /* muted text */
   --accent:#e85c4a;      /* coral */
-  --accent-ink:#ffffff;  /* text on accent */
+  --accent-ink:#fff;     /* text on accent */
   --card:#ffffff;        /* card bg */
   --line:#ede9e3;        /* soft borders */
 }
-
 html,body{
   margin:0; padding:0;
   background:var(--bg);
@@ -24,204 +20,143 @@ html,body{
 }
 a{ color:inherit; text-decoration:none; text-underline-offset:3px; }
 a:hover{ text-decoration:underline; }
-h1,h2{ font-family:"Fraunces", serif; letter-spacing:-0.4px; }
-.accent{ color:var(--accent); }
 
 /* ---------- Layout ---------- */
 .container{ max-width:1120px; margin:0 auto; padding:0 28px; }
 @media (min-width:900px){ .container{ padding:0 56px; } }
 
-.section{
-  padding:64px 0;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
+.section{ padding:64px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 main .section:nth-of-type(odd){ background:var(--bg); }
 main .section:nth-of-type(even){ background:var(--panel); }
 
-.section h2{
-  font-size:32px; margin:0 0 8px; text-align:center;
-}
-.section .section-sub{
-  color:var(--muted); margin:0 0 20px; text-align:center;
-}
+h1,h2{ font-family:"Fraunces", serif; letter-spacing:-0.5px; }
+h1{ font-size:56px; line-height:1.05; margin:0 0 12px; }
+h2{ font-size:32px; margin:0 0 8px; text-align:center; }
+.section .section-sub{ color:var(--muted); margin:0 0 20px; text-align:center; }
 
 /* ---------- Header / Nav ---------- */
-.site-header{
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#fcfdff,transparent);
-}
-.nav{
-  display:flex; align-items:center; justify-content:space-between;
-}
-.nav-links{ display:flex; gap:24px; }
+.site-header{ border-bottom:1px solid var(--line); background:linear-gradient(180deg,#fcfdff,transparent); }
+.nav{ display:flex; align-items:center; justify-content:space-between; }
+.nav-links{ display:flex; align-items:center; gap:24px; }
 .nav-links a{ color:#64748b; }
 .nav-links a:hover{ color:var(--ink); text-decoration:none; }
-.logo img{ height:64px; border-radius:50%; display:block; }
 
-/* ---------- Buttons / Pills ---------- */
+/* ---------- Buttons & chips ---------- */
 .btn{
-  display:inline-block;
-  background:var(--accent);
-  color:var(--accent-ink);
-  font-weight:700;
-  padding:10px 16px;
-  border-radius:12px;
+  display:inline-block; background:var(--accent); color:var(--accent-ink);
+  font-weight:700; padding:10px 16px; border-radius:12px;
   box-shadow:0 4px 14px rgba(232,92,74,0.25);
-  transition:transform .15s ease, box-shadow .15s ease;
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
 }
-.btn:hover{ transform:translateY(-2px); box-shadow:0 6px 20px rgba(232,92,74,0.35); }
-.btn.ghost{
-  background:transparent;
-  color:var(--accent);
-  border:1.5px solid var(--accent);
-  box-shadow:none;
-}
+.btn:hover{ filter:brightness(.97); transform:translateY(-2px); box-shadow:0 6px 20px rgba(232,92,74,0.35); }
+.btn.ghost{ background:transparent; color:var(--accent); border:1.5px solid var(--accent); box-shadow:none; }
 
-.quick-facts{
-  display:flex; gap:12px; align-items:center; flex-wrap:wrap;
-}
+.cta-row,.quick-facts{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .quick-facts span{
-  background:var(--panel);
-  border:1px solid var(--line);
-  color:var(--muted);
-  border-radius:999px;
-  padding:6px 10px;
-  font-size:13px;
+  background:var(--panel); border:1px solid var(--line); color:var(--muted);
+  border-radius:999px; padding:6px 10px; font-size:13px;
 }
 
-/* ===========================
-   Split-side hero (edge-bleed)
-   =========================== */
-.hero-split{
-  position:relative;
-  padding:72px 0;
-  overflow:hidden; /* allow the image to sit outside the container */
+/* ---------- EDGE-IMAGE HERO (the new thing) ---------- */
+/* Section that lets an image bleed to the viewport edge while copy sits in a safe area */
+.hero-edge{
+  position:relative; overflow:hidden;
+  padding:96px 0;
   background:linear-gradient(180deg,#fffaf4,transparent);
 }
+.hero-edge .container{ position:relative; z-index:2; }
+.hero-edge .copy{ max-width:560px; }
+.hero-edge .tagline{ color:#475569; margin:0 0 24px; }
 
-/* grid is only for copy column sizing */
-.hs-grid{
-  position:static;           /* make the SECTION the positioning context */
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:32px;
-}
+.hero-edge.left  .copy{ margin-right:auto; text-align:left; }
+.hero-edge.right .copy{ margin-left:auto;  text-align:right; }
 
-.hs-copy{
-  max-width:560px;
-  z-index:2;
-}
-.hs-copy h1{ font-size:48px; line-height:1.05; margin:0 0 12px; }
-.hs-copy .tagline{ max-width:560px; color:#475569; margin:0 0 16px; }
-.cta-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-
-/* SAFE PADDING so copy never collides with the photo half */
-.hero-split.left  { padding-right: clamp(300px, 50vw, 640px); }
-.hero-split.right { padding-left:  clamp(300px, 50vw, 640px); }
-
-/* The edge-pinned image halves */
-.hero-split .hs-image{
-  position:absolute; top:0; bottom:0;
-  width:50vw; height:100%;
-  pointer-events:none;
-}
-.hero-split.left  .hs-image.half.right{ right:0; }
-.hero-split.right .hs-image.half.left { left:0;  }
-
-/* Fill behavior: use cover for bold, contain for conservative */
-.hero-split .hs-image img{
-  width:100%; height:100%;
-  object-fit:cover; /* change to 'contain' if you want to see more of the portrait */
+/* the edge image itself (as a background for easy scaling) */
+.edge-photo{
+  position:absolute; top:0; bottom:0; width:50vw; pointer-events:none; z-index:1;
+  background-repeat:no-repeat; background-size:contain; background-position:center bottom;
   filter:drop-shadow(0 18px 48px rgba(0,0,0,.10));
 }
+/* right-side image for first band */
+.hero-edge.left  .edge-photo{ right:0; background-image:url("Headshot Right.png"); background-position:right bottom; }
+/* left-side image for second band */
+.hero-edge.right .edge-photo{ left:0;  background-image:url("Headshot Left.png");  background-position:left  bottom; }
 
-/* Mirror the left band so face looks inward */
-.hero-split.right .hs-image.half.left img{ transform: scaleX(-1); }
+/* ensure the text never collides with the image: pad the side that has the photo */
+.hero-edge.left  { padding-right: clamp(320px, 50vw, 640px); }
+.hero-edge.right { padding-left:  clamp(320px, 50vw, 640px); }
 
-/* Align CTAs with copy edge */
-.hero-split .cta-row, .hero-split .quick-facts{ justify-content:flex-start; }
-.hero-split.right .hs-copy{ text-align:right; margin-left:auto; }
-.hero-split.right .cta-row, .hero-split.right .quick-facts{ justify-content:flex-end; }
+/* Mobile: stack, no bleed */
+@media (max-width:820px){
+  .hero-edge{ padding:56px 0; }
+  .hero-edge.left, .hero-edge.right{ padding-left:24px; padding-right:24px; }
+  .edge-photo{ position:static; width:100%; height:clamp(260px,60vw,380px); background-position:center bottom; }
+  .hero-edge .copy{ margin:0 auto; text-align:center; }
+}
+
+/* ---------- “About / My Story” ---------- */
+.about-wrap{ display:flex; align-items:center; justify-content:space-between; gap:48px; flex-wrap:wrap; }
+.about-text{ flex:1; min-width:280px; }
+.about-text p{ color:var(--muted); margin:8px 0; max-width:560px; }
+.about-photo img{
+  width:220px; height:220px; object-fit:cover; border-radius:50%;
+  box-shadow:0 8px 32px rgba(0,0,0,.08); border:4px solid #fff;
+}
+@media(max-width:768px){
+  .about-wrap{ flex-direction:column-reverse; text-align:center; }
+  .about-photo img{ width:180px; height:180px; }
+}
 
 /* ---------- Projects ---------- */
 .grid{
   display:grid; gap:28px;
-  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
   max-width:980px; margin:0 auto;
 }
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:20px;
-  box-shadow:0 6px 24px rgba(2,6,23,.06);
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px;
+  box-shadow:0 6px 24px rgba(2,6,23,0.06);
 }
 .card h3{ margin:8px 0; }
-.card-tag{
-  display:inline-block;
-  font-size:12px; color:var(--muted);
-  border:1px solid var(--line);
-  padding:2px 8px; border-radius:999px; margin-bottom:8px;
-}
-.thumb{
+.card-tag{ display:inline-block; font-size:12px; color:var(--muted); border:1px solid var(--line); padding:2px 8px; border-radius:999px; margin-bottom:8px; }
+.bullets{ margin:8px 0 0; padding:0 0 0 16px; }
+.card .thumb{
   width:100%; aspect-ratio:16/9; border-radius:12px; margin-bottom:12px;
-  background:linear-gradient(135deg,#ffd9cf,#ffe9e2 40%,#fff5ef);
-  border:1px solid var(--line);
-  box-shadow:0 6px 20px rgba(0,0,0,.06);
+  background:linear-gradient(135deg,#ffd9cf,#ffe9e2 40%,#fff5ef); border:1px solid var(--line);
+  box-shadow:0 6px 20px rgba(0,0,0,0.06); overflow:hidden; position:relative;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
+.card:hover .thumb{ transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,0.10); }
+.card .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 
 /* ---------- Experience (Timeline) ---------- */
-.timeline{
-  position:relative;
-  border-left:3px solid var(--line);
-  padding-left:56px;
-  max-width:980px;
-  margin:0 auto;
-}
+.timeline{ position:relative; border-left:3px solid var(--line); padding-left:56px; }
 .t-item{ position:relative; margin:22px 0 26px; }
 .t-dot{
-  position:absolute; left:-62px; top:8px;
-  width:12px; height:12px; background:var(--accent);
-  border:2px solid #fff; border-radius:50%;
-  box-shadow:0 2px 6px rgba(0,0,0,.12);
+  position:absolute; left:-62px; top:8px; width:12px; height:12px; background:var(--accent);
+  border:2px solid #fff; border-radius:50%; box-shadow:0 2px 6px rgba(0,0,0,.12);
 }
 .t-content h3{ margin:0 0 6px; }
 .t-content p{ margin:0; color:var(--muted); line-height:1.7; }
 
 /* ---------- Skills ---------- */
 #skills{ text-align:center; }
-.chips{
-  display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
-  margin-top:20px;
-}
+.chips{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px; }
 .chips span{
   display:inline-block; padding:8px 14px; border-radius:999px;
   background:var(--card); color:var(--ink); border:1.5px solid var(--accent);
-  font-size:15px; font-weight:500;
-  box-shadow:0 2px 8px rgba(232,92,74,.15);
+  font-size:15px; font-weight:500; box-shadow:0 2px 8px rgba(232,92,74,0.15);
   transition:all .2s ease;
 }
 .chips span:hover{ background:var(--accent); color:var(--accent-ink); transform:translateY(-2px); }
 
 /* ---------- Contact ---------- */
-.contact-cards{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-.card.mini{
-  padding:10px 12px; border-radius:10px;
-  background:var(--panel); border:1px solid var(--line);
-}
+.contact-cards{ display:flex; gap:12px; flex-wrap:wrap; }
+.card.mini{ padding:10px 12px; border-radius:10px; background:var(--panel); border:1px solid var(--line); }
 
 /* ---------- Footer ---------- */
 .site-footer{ border-top:1px solid var(--line); padding:20px 0; color:var(--muted); text-align:center; }
 
-/* ---------- Mobile ---------- */
-@media (max-width:820px){
-  .hs-grid{ grid-template-columns:1fr; }
-  .hero-split{ overflow:visible; padding:56px 0; }
-  .hero-split.left, .hero-split.right{ padding-left:24px; padding-right:24px; }
-  .hs-copy{ text-align:center; margin:0 auto; }
-  .hero-split .cta-row, .hero-split .quick-facts{ justify-content:center; }
-  .hero-split .hs-image{ position:static; width:100%; height:clamp(260px,60vw,380px); }
-  .hero-split .hs-image img{ transform:none; object-fit:contain; }
-}
+/* ---------- Reveal (optional) ---------- */
+.reveal{ opacity:0; transform:translateY(40px); transition:all .8s ease-out; }
+.reveal.visible{ opacity:1; transform:translateY(0); }
