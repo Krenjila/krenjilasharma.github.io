@@ -128,7 +128,8 @@ h2{ font-size:32px; margin:0 0 8px; text-align:center; }
 .hero-edge{
   position: relative;
   overflow: hidden;          /* let images bleed to edges */
-  padding: 88px 0;           /* vertical breathing room */
+  padding: 120px 0;          /* more breathing room */
+  min-height: clamp(480px, 65vw, 780px); /* ensures full face shows */
   background: transparent;   /* no panel tint */
 }
 
@@ -139,13 +140,13 @@ h2{ font-size:32px; margin:0 0 8px; text-align:center; }
   text-align: left;
 }
 
-/* The image half (as a background) */
 .hero-edge .edge-photo{
   position: absolute;
   top: 0; bottom: 0;
-  width: 50vw;               /* always half the viewport */
+  width: 50vw;
   background-repeat: no-repeat;
-  background-size: cover;    /* big & dramatic; switch to 'contain' if too large */
+  background-size: contain;       /* show entire portrait */
+  background-position: center right; /* fine-tuned placement */
   pointer-events: none;
   z-index: 1;
 }
@@ -163,7 +164,7 @@ h2{ font-size:32px; margin:0 0 8px; text-align:center; }
 .hero-edge.right .edge-photo{
   left: 0;
   background-image: url("Headshot Left.png");    /* exact filename */
-  background-position: left center;
+  background-position: center left;
 }
 .hero-edge.right { padding-left:  clamp(320px, 50vw, 720px); }
 
