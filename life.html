@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Life Outside Data — Krenjila Sharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .life-hero {
+      min-height: 60svh;
+      display: flex;
+      align-items: flex-end;
+      padding: 120px 0 64px;
+      border-bottom: 1px solid var(--ink);
+      position: relative;
+    }
+    .life-hero .back-link {
+      position: absolute;
+      top: 80px; left: 40px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .life-hero .back-link:hover { color: var(--ink); }
+    .life-hero h1 {
+      font-size: clamp(52px, 7vw, 100px);
+      letter-spacing: -3px;
+      line-height: 0.92;
+      margin-bottom: 32px;
+    }
+    .life-hero p.intro {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    .bio-strip {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .bio-strip-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .bio-strip-inner { grid-template-columns: 1fr; gap: 40px; } }
+    .bio-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(244,241,235,0.35); margin-bottom: 20px; }
+    .bio-strip h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); font-weight: 900; line-height: 1.0; letter-spacing: -1.5px; color: var(--bg); margin-bottom: 24px; }
+    .bio-strip h2 em { font-style: italic; color: var(--red); }
+    .bio-text p { font-size: 16px; font-weight: 300; color: rgba(244,241,235,0.6); line-height: 1.8; margin-bottom: 16px; }
+    .bio-text p:last-child { margin-bottom: 0; }
+    .bio-text b { color: var(--bg); font-weight: 500; }
+    .bio-facts { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(244,241,235,0.1); margin-top: 32px; }
+    .bio-fact { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(244,241,235,0.1); font-size: 14px; }
+    .bio-fact-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,241,235,0.3); }
+    .bio-fact-val { color: rgba(244,241,235,0.7); }
+
+    .hobbies { padding: 88px 0; border-bottom: 1px solid var(--ink); }
+    .hobbies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--ink); border: 1px solid var(--ink); }
+    @media (max-width: 640px) { .hobbies-grid { grid-template-columns: 1fr; } }
+    .hobby-card { background: var(--card); padding: 40px 36px; transition: background 0.2s; }
+    .hobby-card:hover { background: #fff; }
+    .hobby-num { font-family: var(--serif); font-size: 48px; font-weight: 900; line-height: 1; color: var(--red); margin-bottom: 16px; font-style: italic; }
+    .hobby-card h3 { font-family: var(--serif); font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .hobby-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+    .leadership { padding: 88px 0; border-bottom: 1px solid var(--ink); background: var(--surface); }
+    .leader-item { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; padding: 48px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .leader-item:first-child { border-top: 1px solid var(--line); }
+    @media (max-width: 768px) { .leader-item { grid-template-columns: 1fr; gap: 24px; } }
+    .leader-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center top; filter: grayscale(100%) contrast(1.05); border: 1px solid var(--line); transition: filter 0.3s; }
+    .leader-photo:hover { filter: grayscale(0%) contrast(1); }
+    .leader-photo-placeholder { width: 100%; aspect-ratio: 4/3; background: var(--surface); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .leader-role { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); font-weight: 500; margin-bottom: 8px; }
+    .leader-right h3 { font-family: var(--serif); font-size: 28px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 8px; }
+    .leader-date { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 20px; }
+    .leader-right p { font-size: 14px; color: var(--muted); line-height: 1.8; max-width: 480px; }
+    .leader-right p b { color: var(--ink); }
+    .leader-stats { display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap; }
+    .leader-stat-num { font-family: var(--serif); font-size: 32px; font-weight: 900; line-height: 1; color: var(--ink); }
+    .leader-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
+
+    .research-callout { padding: 88px 0; border-bottom: 1px solid var(--ink); }
+    .research-callout-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
+    @media (max-width: 768px) { .research-callout-inner { grid-template-columns: 1fr; gap: 32px; } }
+    .research-callout img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border: 1px solid var(--line); filter: grayscale(100%) contrast(1.05); transition: filter 0.3s; }
+    .research-callout img:hover { filter: grayscale(0%) contrast(1); }
+    .research-callout-text h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px; }
+    .research-callout-text h2 em { font-style: italic; color: var(--red); }
+    .research-callout-text p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+
+    .back-cta { padding: 88px 0; text-align: center; background: var(--ink); color: var(--bg); }
+    .back-cta h2 { font-family: var(--serif); font-size: clamp(36px, 5vw, 72px); font-weight: 900; letter-spacing: -2px; line-height: 0.95; color: var(--bg); margin-bottom: 32px; }
+    .back-cta h2 em { font-style: italic; color: var(--red); }
+    .back-cta .btn { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+    .back-cta .btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="logo" href="index.html">
+          <img src="K.png" alt="KS" style="height:52px;border-radius:50%;">
+        </a>
+        <div class="nav-links">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#research">Research</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="life-hero">
+      <a class="back-link" href="index.html">← Back to work</a>
+      <div class="container">
+        <div class="life-hero-inner reveal">
+          <p class="kicker">Beyond the dashboard</p>
+          <h1>Life outside<br>of <em class="red">data.</em></h1>
+          <p class="intro">The resume tells you what I've built. This page tells you who built it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bio-strip">
+      <div class="container">
+        <div class="bio-strip-inner">
+          <div class="reveal">
+            <p class="bio-label">Who I am</p>
+            <h2>More than<br>a <em>GPA.</em></h2>
+          </div>
+          <div class="bio-text reveal">
+            <p>I'm a first-gen student from NJ who decided that CS and Business Analytics wasn't enough — so I added slam poetry, a robotics club, and a Women in STEM board role on top of it.</p>
+            <p>I write code in the morning and used to write verses at night. I think the best analysts are also great storytellers, and I've been practicing both since I can remember.</p>
+            <p><b>I move to music constantly,</b> find beauty in a well-framed photo, and genuinely believe the most interesting people are the ones who refuse to be one thing.</p>
+            <div class="bio-facts">
+              <div class="bio-fact">
+                <span class="bio-fact-label">Based in</span>
+                <span class="bio-fact-val">Verona, NJ</span>
+              </div>
+              <div class="bio-fact">
+                <span class="bio-fact-label">Currently</span>
+                <span class="bio-fact-val">Junior @ Caldwell University</span>
+              </div>
+              <div class="bio-fact">
+                <span class="bio-fact-label">Always listening to</span>
+                <span class="bio-fact-val">Something, somewhere</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hobbies">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>What I do for fun.</h2>
+          <p class="section-sub">No dashboards involved.</p>
+        </div>
+        <div class="hobbies-grid">
+          <div class="hobby-card reveal">
+            <div class="hobby-num">01</div>
+            <h3>Slam Poetry</h3>
+            <p>I used to perform. There's something about finding exactly the right word — same reason I like data, actually. Both are just trying to say something true, precisely.</p>
+          </div>
+          <div class="hobby-card reveal">
+            <div class="hobby-num">02</div>
+            <h3>Dancing</h3>
+            <p>The one thing I do where I'm not thinking about optimization or outcomes. Pure movement. Turns out it's good for you to just exist in your body sometimes.</p>
+          </div>
+          <div class="hobby-card reveal">
+            <div class="hobby-num">03</div>
+            <h3>Photography</h3>
+            <p>Not professionally — just the urge to frame things. Light, moments, people mid-laugh. It's the same eye I use for design work, but with less Figma involved.</p>
+          </div>
+          <div class="hobby-card reveal">
+            <div class="hobby-num">04</div>
+            <h3>Music, always</h3>
+            <p>24/7, no exceptions. The playlist changes depending on whether I'm debugging, presenting, or avoiding both. There is always a song playing somewhere nearby.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="leadership">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Leadership.</h2>
+          <p class="section-sub">On campus.</p>
+        </div>
+        <div class="leadership-grid">
+
+          <div class="leader-item reveal">
+            <img src="IMG_8549.jpg" alt="Caldwell Robotics Club competition" class="leader-photo">
+            <div class="leader-right">
+              <p class="leader-role">Secretary</p>
+              <h3>Caldwell Robotics Club</h3>
+              <p class="leader-date">Jan 2025 – Present</p>
+              <p>Coordinating meetings, managing records, and keeping 20+ members aligned — which is harder than it sounds when everyone has a different idea of what the robot should do.</p>
+              <div class="leader-stats">
+                <div>
+                  <div class="leader-stat-num">20+</div>
+                  <div class="leader-stat-label">Members</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="leader-item reveal">
+            <img src="IMG_8552.jpg" alt="Women in STEM speed networking event" class="leader-photo">
+            <div class="leader-right">
+              <p class="leader-role">Media Manager</p>
+              <h3>Women in STEM</h3>
+              <p class="leader-date">Sep 2024 – Present</p>
+              <p>Running content strategy for a club that reaches 500+ students. Grew event attendance by <b>40%</b> through analytics-informed content — yes, I use data to promote a club that celebrates data. The irony is not lost on me.</p>
+              <div class="leader-stats">
+                <div>
+                  <div class="leader-stat-num">500+</div>
+                  <div class="leader-stat-label">Students reached</div>
+                </div>
+                <div>
+                  <div class="leader-stat-num">40%</div>
+                  <div class="leader-stat-label">Attendance growth</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="leader-item reveal">
+            <div class="leader-photo-placeholder">Photo coming soon</div>
+            <div class="leader-right">
+              <p class="leader-role">Member</p>
+              <h3>Google Developer Group</h3>
+              <p class="leader-date">Dec 2024 – Present</p>
+              <p>Facilitating biweekly workshops on HTML, CSS, and Java for fellow students. Building technical community one semicolon at a time.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="research-callout reveal">
+      <div class="container">
+        <div class="research-callout-inner">
+          <img src="Facetune_23-04-2025-19-40-09.png" alt="Krenjila presenting at CCSCNE 2025">
+          <div class="research-callout-text">
+            <p class="kicker">CCSCNE 2025</p>
+            <h2>Published.<br><em>Presented.</em><br>Proud of it.</h2>
+            <p>That's my plagiarism detection research on the board behind me. Presented at the Consortium for Computing Sciences in Colleges, Northeast — the only junior in the room who built the system she was presenting.</p>
+            <a class="btn" href="index.html#research">Read the research →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="back-cta">
+      <div class="container">
+        <h2>Now see the<br><em>work.</em></h2>
+        <a class="btn" href="index.html">Back to portfolio →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Krenjila Sharma &nbsp;·&nbsp; CS × Business Analytics</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+
+</body>
+</html>
