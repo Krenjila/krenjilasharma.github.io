@@ -4,21 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Krenjila Sharma — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header / Nav -->
+  <!-- NAV -->
   <header class="site-header">
     <div class="container">
       <nav class="nav">
         <a class="logo" href="#top">
-          <img src="K.png" alt="Krenjila Sharma Logo" style="height:84px;border-radius:50%;">
+          <img src="K.png" alt="KS" style="height:52px;border-radius:50%;">
         </a>
         <div class="nav-links">
           <a href="#projects">Projects</a>
-          <a href="#resume">Experience</a>
+          <a href="#experience">Experience</a>
+          <a href="#research">Research</a>
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </div>
@@ -28,177 +29,240 @@
 
   <main id="top">
 
-    <!-- HERO BAND 1 (photo on the RIGHT edge) -->
+    <!-- HERO 1 — photo RIGHT -->
     <section class="hero-edge left">
       <div class="edge-photo" aria-hidden="true"></div>
       <div class="container">
         <div class="copy">
-          <h1>Hi, I’m Krenjila Sharma.</h1>
-          <p class="tagline">
-            I work in the intersection of <b>BUILDING, ANALYZING AND DESIGNING.</b>
-            A <b>Computer Science × Business Analytics</b> student with a builder’s mindset—always learning, creating, and refining.
-          </p>
+          <p class="kicker">Est. 2023 · NJ/NY</p>
+          <h1>I turn <em class="red">data</em><br>into decisions.</h1>
+          <p class="tagline">CS × Business Analytics student.<br>Builder. Analyst. Occasional overachiever.</p>
           <div class="cta-row">
-            <a class="btn" href="#projects">Explore My Work</a>
-            <a class="btn ghost" href="#contact">Let’s Connect</a>
+            <a class="btn" href="#projects">See the work</a>
+            <a class="btn ghost" href="#contact">Say hello</a>
           </div>
-          <div class="quick-facts" style="margin-top:12px">
-            <span>GPA 3.8+</span><span>NY/NJ</span>
+          <div class="quick-facts">
+            <span>GPA 3.8+</span><span>Open to roles</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- HERO BAND 2 (photo on the LEFT edge) -->
+    <!-- HERO 2 — photo LEFT -->
     <section class="hero-edge right">
       <div class="edge-photo" aria-hidden="true"></div>
       <div class="container">
         <div class="copy">
-          <h2>Designer-minded, data-backed.</h2>
-          <p class="tagline">I bring together research, prototyping, and analytics to ship work that’s useful and clear.</p>
+          <h2>Not just<br><em class="red">charts.</em><br>Answers.</h2>
+          <p class="tagline">Research. Dashboards. Strategy.<br>I work where the numbers meet the decision.</p>
           <div class="cta-row">
-            <a class="btn" href="#projects">See Projects</a>
-            <a class="btn ghost" href="#resume">See Experience</a>
+            <a class="btn" href="#projects">Projects</a>
+            <a class="btn ghost" href="#experience">Experience</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- PROJECTS -->
     <section class="section reveal" id="projects">
       <div class="container">
-        <h2>Projects</h2>
-        <p class="section-sub">Selected work blending design, analytics, and storytelling.</p>
-
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p class="section-sub">Selected work.</p>
+        </div>
         <div class="grid">
+
           <article class="card">
-            <div class="card-tag">Product • UX</div>
-            <div class="thumb"></div>
-            <h3>Touch-Based IDE</h3>
-            <p>Reimagined how beginners learn programming through a tap-based coding IDE.
-Defined the MVP roadmap, led 150+ usability tests, and improved task success rates by <b>40%</b>.
-Delivered two working prototypes demonstrating how touch gestures can replace drag-and-drop learning tools.</p>
-            <ul class="bullets">
-              <li>Two prototypes; fewer navigation steps per task</li>
-              <li><b>Stack</b>: Figma, Python, JS, JSON</li>
-            </ul>
+            <div class="card-meta">
+              <span class="card-tag">Analytics · ML</span>
+              <span class="card-num">01</span>
+            </div>
+            <h3>Transaction Anomaly Detection</h3>
+            <p>Python + SQL pipeline to catch duplicate, threshold-violating, and outlier transactions — automated exception reporting, less manual review.</p>
+            <div class="card-footer">
+              <span class="stack">Python · SQL · Power BI</span>
+              <a href="https://github.com/Krenjila" target="_blank" rel="noopener" class="card-link">GitHub ↗</a>
+            </div>
           </article>
 
           <article class="card">
-            <div class="card-tag">Analytics • Coding</div>
-            <div class="thumb"></div>
-            <h3>Plagiarism Detection</h3>
-            <p>Built a Random Forest–powered dashboard to flag suspicious coding submissions across 5,000+ logs.
-Improved detection accuracy by <b>27%</b>, enabling faculty to identify integrity risks faster.
-Designed Power BI visualizations that made real-time monitoring intuitive for non-technical users.</p>
-            <ul class="bullets">
-              <li>Developed for Caldwell University’s academic integrity research program. Presented in CCSCNE Research Seminar 2025.</li>
-              <li><b>Stack</b>: Python, SQL, Excel/Power BI</li>
-            </ul>
+            <div class="card-meta">
+              <span class="card-tag">Analytics · Research</span>
+              <span class="card-num">02</span>
+            </div>
+            <h3>Plagiarism Detection System</h3>
+            <p>Random Forest classifier across 5,000+ submissions. <b>27% accuracy lift.</b> Power BI dashboards now actively used by Caldwell faculty.</p>
+            <div class="card-footer">
+              <span class="stack">Python · SQL · Power BI</span>
+              <a href="https://github.com/Krenjila" target="_blank" rel="noopener" class="card-link">GitHub ↗</a>
+            </div>
           </article>
-          
-  <article class="card">
-  <div class="card-tag">AI • Analytics</div>
-  <div class="thumb"></div>
-  <h3>AI Voice Agent Pilot (Pyramid Healthcare)</h3>
-  <p>
-    Defined metrics for a clinician-facing AI voice agent projected to reduce documentation workload by <b>60%</b>. 
-    Built KPI dashboards tracking adoption and model performance to guide iteration cycles. 
-    Partnered with engineering and design teams to drive rollout and success measurement across clinical workflows.
-  </p>
-  <ul class="bullets">
-    <li>Delivered insight reports driving product adoption and operational efficiency</li>
-    <li><b>Stack:</b> Python, Excel, Power BI</li>
-  </ul>
-</article>
-          
+
           <article class="card">
-            <div class="card-tag">Data • Strategy</div>
-            <div class="thumb"></div>
-            <h3>POS ROI Model (WoW Payments)</h3>
-            <p>Created a pricing and ROI model that optimized POS deployments for 30+ SMB clients.
-Built Salesforce dashboards and reduced onboarding time by <b>25%</b>, accelerating pipeline conversion.
-Supported leadership decisions with quantitative payback models and competitive insights.</p>
-            <ul class="bullets">
-              <li>Delivered actionable ROI insights for executive decision-making</li>
-              <li><b>Stack</b>: Excel, Power BI, Salesforce</li>
-            </ul>
+            <div class="card-meta">
+              <span class="card-tag">AI · Product</span>
+              <span class="card-num">03</span>
+            </div>
+            <h3>AI Voice Agent Pilot</h3>
+            <p>KPI framework for a clinical AI platform. Projected <b>60% reduction</b> in documentation workload. Dashboards tracking adoption + model performance.</p>
+            <div class="card-footer">
+              <span class="stack">Python · Excel · Power BI</span>
+              <a href="https://github.com/Krenjila" target="_blank" rel="noopener" class="card-link">GitHub ↗</a>
+            </div>
           </article>
+
+          <article class="card">
+            <div class="card-meta">
+              <span class="card-tag">Product · UX</span>
+              <span class="card-num">04</span>
+            </div>
+            <h3>Touch-Based IDE</h3>
+            <p>Tap-based coding environment for beginners. 150+ usability tests. <b>40% improvement</b> in task success. Two working prototypes shipped.</p>
+            <div class="card-footer">
+              <span class="stack">Figma · Python · JS</span>
+              <a href="https://github.com/Krenjila" target="_blank" rel="noopener" class="card-link">GitHub ↗</a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-<section class="section reveal" id="resume">
-  <div class="container">
-    <h2>Experience</h2>
+    <!-- EXPERIENCE -->
+    <section class="section reveal" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p class="section-sub">Where I've been.</p>
+        </div>
+        <div class="timeline">
 
-    <div class="timeline">
-
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-content">
-          <div class="t-meta">
-            <span class="t-company">Selective Insurance</span>
-            <span class="t-date">Incoming · Summer 2026</span>
+          <div class="t-item reveal">
+            <div class="t-left">
+              <span class="t-badge incoming">Incoming</span>
+              <p class="t-date">Summer 2026</p>
+              <p class="t-company">Selective Insurance</p>
+            </div>
+            <div class="t-right">
+              <h3>Business Intelligence & Insights Intern</h3>
+              <p>Insurance Operations. BI and data insights. Turning operational data into decisions that move the needle.</p>
+              <div class="t-tags"><span>Power BI</span><span>Analytics</span><span>Insurance Ops</span></div>
+            </div>
           </div>
-          <h3>Business Intelligence & Insights Intern</h3>
-          <p>Joining the Insurance Operations Department to work on BI and data insights. Focused on turning operational data into decisions that actually move the needle.</p>
-          <div class="t-tags"><span>Power BI</span><span>Analytics</span><span>Insurance Ops</span></div>
+
+          <div class="t-item reveal">
+            <div class="t-left">
+              <p class="t-date">Aug – Dec 2025</p>
+              <p class="t-company">Pyramid Healthcare</p>
+            </div>
+            <div class="t-right">
+              <h3>AI Project Analyst Intern</h3>
+              <p>KPI strategy for a clinician-facing AI platform. <b>60% reduction</b> in admin burden. Surfaced inefficiencies across 15+ workflows. Real-time dashboards for leadership.</p>
+              <div class="t-tags"><span>Python</span><span>Power BI</span><span>KPI Design</span></div>
+            </div>
+          </div>
+
+          <div class="t-item reveal">
+            <div class="t-left">
+              <p class="t-date">Aug 2024 – May 2025</p>
+              <p class="t-company">Caldwell University</p>
+            </div>
+            <div class="t-right">
+              <h3>Lab Operations Manager & Research Assistant</h3>
+              <p>Led 10-person research team. Analytics pipeline across 5,000+ records — <b>27% data quality improvement.</b> Built the plagiarism system that faculty still use.</p>
+              <div class="t-pub">
+                <span>📄</span>
+                <span>Presented at <b>CCSCNE 2025</b> — "Plagiarism Detection in Academic Submissions Using Machine Learning"</span>
+              </div>
+              <div class="t-tags"><span>Python</span><span>SQL</span><span>Team Lead</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
+    </section>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-content">
-          <div class="t-meta">
-            <span class="t-company">Pyramid Healthcare</span>
-            <span class="t-date">Aug 2025 – Dec 2025</span>
+    <!-- RESEARCH -->
+    <section class="section reveal" id="research">
+      <div class="container">
+        <div class="section-header">
+          <h2>Research</h2>
+          <p class="section-sub">Published work.</p>
+        </div>
+        <div class="pub-card">
+          <div class="pub-left">
+            <span class="pub-badge">Conference Paper · 2025</span>
+            <h3>Plagiarism Detection in Academic Submissions Using Machine Learning</h3>
+            <p class="pub-venue">CCSCNE 2025 Research Seminar<br>Consortium for Computing Sciences in Colleges, Northeast</p>
           </div>
-          <h3>AI Project Analyst Intern</h3>
-          <p>Drove analytics and KPI strategy for a clinician-facing AI platform—cutting administrative burden by <b>60%</b> and identifying inefficiencies across 15+ operational workflows. Built Power BI dashboards that gave leadership real-time visibility into system performance, error rates, and risk patterns.</p>
-          <div class="t-tags"><span>Python</span><span>Power BI</span><span>KPI Design</span><span>Workflow Analysis</span></div>
+          <div class="pub-right">
+            <p>Random Forest classifier on 5,000+ submission logs. 27% accuracy improvement. Power BI dashboards for faculty — deployed and in active use.</p>
+            <div class="t-tags">
+              <span>Python</span><span>Random Forest</span><span>Power BI</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="t-item">
-        <div class="t-dot"></div>
-        <div class="t-content">
-          <div class="t-meta">
-            <span class="t-company">Caldwell University · CogAI Lab</span>
-            <span class="t-date">Aug 2024 – May 2025</span>
-          </div>
-          <h3>Lab Operations Manager & Research Assistant</h3>
-          <p>Led a 10-member research team and built an analytics pipeline across 5,000+ records that improved data quality by <b>27%</b>. Standardized validation workflows and quality control procedures that reduced reporting errors across the team's deliverables. The plagiarism detection system I built is actively used by faculty today.</p>
-          <div class="t-tags"><span>Python</span><span>SQL</span><span>Research</span><span>Team Lead</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Skills -->
+    <!-- SKILLS -->
     <section class="section reveal" id="skills">
       <div class="container">
-        <h2>Skills</h2>
-        <div class="chips">
-          <span>Figma</span><span>HTML/CSS/JS</span><span>Python</span><span>SQL</span>
-          <span>Power BI</span><span>MS Office</span><span>Research</span>
-          <span>Tableau</span><span>Strategic Planning</span><span>ROI Modeling</span>
+        <div class="section-header">
+          <h2>Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4>Analytics & BI</h4>
+            <ul>
+              <li>Power BI</li>
+              <li>Tableau</li>
+              <li>Advanced Excel</li>
+              <li>Statistical Modeling</li>
+              <li>KPI Development</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Technical</h4>
+            <ul>
+              <li>Python (Pandas, NumPy, Scikit-learn)</li>
+              <li>SQL</li>
+              <li>HTML / CSS / JS</li>
+              <li>Figma</li>
+              <li>Git</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Business</h4>
+            <ul>
+              <li>Strategic Planning</li>
+              <li>ROI Modeling</li>
+              <li>Stakeholder Reporting</li>
+              <li>Requirements Gathering</li>
+              <li>Cross-functional Collaboration</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="section reveal" id="contact">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="section-sub">Open to internships, collabs, and feedback.</p>
-        <div class="contact-cards">
-          <a class="card mini" href="mailto:krenjila1sharma@gmail.com">krenjila1sharma@gmail.com</a>
-          <a class="card mini" href="https://linkedin.com/in/krenjilasharma" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="card mini" href="https://github.com/krenjilasharma" target="_blank" rel="noopener">GitHub</a>
+        <div class="section-header">
+          <h2>Let's talk.</h2>
+          <p class="section-sub">Internships, collabs, interesting problems.</p>
+        </div>
+        <div class="contact-list">
+          <a class="contact-row" href="mailto:krenjila1sharma@gmail.com">
+            <span>Email</span><span class="contact-val">krenjila1sharma@gmail.com →</span>
+          </a>
+          <a class="contact-row" href="https://linkedin.com/in/krenjilasharma" target="_blank" rel="noopener">
+            <span>LinkedIn</span><span class="contact-val">krenjilasharma →</span>
+          </a>
+          <a class="contact-row" href="https://github.com/Krenjila" target="_blank" rel="noopener">
+            <span>GitHub</span><span class="contact-val">Krenjila →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -207,13 +271,25 @@ Supported leadership decisions with quantitative payback models and competitive 
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="y"></span> Krenjila Sharma</p>
+      <p>© <span id="y"></span> Krenjila Sharma &nbsp;·&nbsp; CS × Business Analytics</p>
     </div>
   </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
-  <script src="script.js"></script>
+
 </body>
 </html>
