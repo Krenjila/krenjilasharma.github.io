@@ -7,6 +7,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* ORIGIN STORY */
+.origin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+@media (max-width: 640px) {
+  .origin-grid { grid-template-columns: 1fr; }
+}
+
+.origin-item {
+  background: var(--card);
+  padding: 40px 36px;
+  transition: background 0.2s;
+}
+
+.origin-item:hover { background: #fff; }
+
+.origin-age {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.origin-item h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.origin-item p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+}
     .life-hero {
       min-height: 60svh;
       display: flex;
@@ -177,8 +221,8 @@
           </div>
           <div class="bio-text reveal">
             <p>Hi, I'm Krenjila.</p>
-            <p>I care about doing things right.</p>
-            <p><b>Outside of school</b> I dance, take photos, listen to music pretty much constantly, and I used to do slam poetry. I'm from NJ but New York feels like home.</p>
+          
+            <p><b>Outside of school</b> I dance, take photos, listen to music pretty much 24/7 and I used to do slam poetry. I'm from NJ but New York feels like home.</p>
             <div class="bio-facts">
               <div class="bio-fact">
                 <span class="bio-fact-label">Based in</span>
@@ -201,7 +245,43 @@
         </div>
       </div>
     </section>
+<!-- ORIGIN STORY -->
+<section class="section reveal" id="origin">
+  <div class="container">
+    <div class="section-header">
+      <h2>Before the data.</h2>
+      <p class="section-sub">Where it all started.</p>
+    </div>
 
+    <div class="origin-grid">
+
+      <div class="origin-item reveal">
+        <span class="origin-age">Age 8</span>
+        <h3>First paycheck.</h3>
+        <p>Started modeling at 8. Runways, TV ads, the works. I've been making my own money and showing up professionally since before most kids had homework.</p>
+      </div>
+
+      <div class="origin-item reveal">
+        <span class="origin-age">Grade 8</span>
+        <h3>1st place, slam poetry.</h3>
+        <p>Won first place across all major schools in Kathmandu. Stood in front of a room and said something true out loud. Still one of my favorite things I've ever done.</p>
+      </div>
+
+      <div class="origin-item reveal">
+        <span class="origin-age">Grade 9</span>
+        <h3>Memory champion.</h3>
+        <p>Attended Adam Khoo's IAmGifted program representing Nepal alongside students from schools across Asia. Won the memory championship — 20 random words, recalled fastest and correctly, setting a record across every country the program had ever visited.</p>
+      </div>
+
+      <div class="origin-item reveal">
+        <span class="origin-age">Grade 10</span>
+        <h3>Called back as instructor.</h3>
+        <p>The year after winning, they invited me back — not as a student, but to teach. I was 16.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- HOBBIES -->
     <section class="hobbies">
       <div class="container">
